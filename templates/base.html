@@ -11,23 +11,31 @@
 <!-- Navbar  -->
 
 <nav class="navbar">
-  <ul class="navlist">
-    <form action="" method="get" class="quote-form">
-      <label for="category-select">Categories:</label>
-      <select name="category" id="category-select">
-          <option value="">Quote of the day</option>
-          <option value="inspire">Inspiration</option>
-          <option value="management">Management</option>
-          <option value="sports">Sports</option>
-          <option value="life">Life</option>
-          <option value="funny">Humor</option>
-          <option value="love">Love</option>
-          <option value="art">Art</option>
-          <option value="students">Students</option>
-      </select>
-      <button type="submit" class="get-quote">Get Quote</button>
-    </form>
-  </ul>
+  <!-- <ul class="navlist"> -->
+    <!-- <li> -->
+      <form action="/" method="get" class="quote-form">
+        <label for="category-select">Categories:</label>
+        <select name="category" id="category-select">
+            <option value="">Quote of the day</option>
+            <option value="inspire">Inspiration</option>
+            <option value="management">Management</option>
+            <option value="sports">Sports</option>
+            <option value="life">Life</option>
+            <option value="funny">Humor</option>
+            <option value="love">Love</option>
+            <option value="art">Art</option>
+            <option value="students">Students</option>
+        </select>
+        <button type="submit" class="get-quote">Get Quote</button>
+      </form>
+    <!-- </li> -->
+  
+    <!-- <li> -->
+      <button class="favorites-button">
+        <a href="/favorites" class="favorites">Favorites</a>
+      </button>
+    <!-- </li> -->
+  <!-- </ul> -->
 </nav>
 
 <!-- End Navbar -->

@@ -13,18 +13,22 @@ body {
 	left: 0;
 	width: 100%;
 	margin: 0;
-	padding: 10px;
+	padding: 20px;
 	border-radius: 3px;
 	background-color: azure;
 	z-index: 1;
-}
-
-.navlist,
-.navlist {
 	display: flex;
 	justify-content: left;
 	align-items: center;
 }
+
+/* .navbar {
+}
+
+li {
+	list-style-type: none;
+	margin: 0 0.5rem;
+} */
 
 label {
 	font-size: 20px;
@@ -42,13 +46,27 @@ select {
 }
 
 button {
-	background-color: #4caf50; /* Green */
 	border: none;
 	border-radius: 3px;
-	color: white;
 	padding: 7px 15px;
 	text-align: center;
 	font-size: 16px;
+}
+
+.get-quote {
+	background-color: #4caf50; /* Green */
+	color: white;
+}
+
+.favorites-button {
+	background-color: coral;
+	margin-left: 0.3rem;
+}
+
+.favorites {
+	color: inherit;
+	text-decoration: none;
+	display: inline-block;
 }
 
 main {
@@ -56,7 +74,6 @@ main {
 	height: 100%;
 	left: 0;
 	top: 2rem;
-	/* color: white; */
 }
 
 h1 {
