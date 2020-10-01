@@ -18,10 +18,20 @@ body {
 }
 
 .navlist,
-.navlist form {
+.navlist {
 	display: flex;
 	justify-content: left;
 	align-items: center;
+}
+
+button {
+	background-color: #4caf50; /* Green */
+	border: none;
+	border-radius: 3px;
+	color: white;
+	padding: 7px 15px;
+	text-align: center;
+	font-size: 16px;
 }
 
 main {
