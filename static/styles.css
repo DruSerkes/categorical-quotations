@@ -5,6 +5,7 @@ body {
 	background-color: darkslategrey;
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	font-size: 16px;
+	position: relative;
 }
 
 .navbar {
@@ -13,7 +14,7 @@ body {
 	left: 0;
 	width: 100%;
 	margin: 0;
-	padding: 20px;
+	padding: 20px 3px;
 	border-radius: 3px;
 	background-color: azure;
 	z-index: 1;
@@ -21,14 +22,6 @@ body {
 	justify-content: left;
 	align-items: center;
 }
-
-/* .navbar {
-}
-
-li {
-	list-style-type: none;
-	margin: 0 0.5rem;
-} */
 
 label {
 	font-size: 20px;
@@ -107,4 +100,24 @@ blockquote {
 
 cite {
 	margin-left: 53%;
+}
+
+@media only screen and (max-width: 400px) {
+	label {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+
+	main {
+		top: 7rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	h3 {
+		font-size: 1.2rem;
+	}
 }
