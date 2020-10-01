@@ -4,5 +4,11 @@
 {% block content %}
 
 <!-- TODO add index.html -->
+<h1>Categorical Quotations</h1>
+
+<section class="content">
+    <blockquote>{{ quote.contents.quotes[0].quote }}</blockquote>
+    <cite>{{ quote.contents.quotes[0].author }}</cite>
+</section>
 
 {% endblock %}

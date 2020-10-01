@@ -1,0 +1,32 @@
+html,
+body {
+	height: 100vh;
+	width: 100vw;
+	background-color: darkslategrey;
+}
+
+.navbar {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	height: 7%;
+	margin: 0 0 2rem 0;
+	padding: 12px;
+	background-color: azure;
+}
+
+.navlist,
+.navlist form {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+
+.content {
+	margin: 0 auto;
+	width: 75%;
+	height: auto;
+	background-color: floralwhite;
+    border-radius: 5px;
+    
+}
