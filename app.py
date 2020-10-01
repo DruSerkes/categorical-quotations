@@ -14,6 +14,6 @@ def homepage():
     """
     Home page - Gets quote of the day and renders it on a template
     """
-    quote_data = get_todays_quote()
-    print(quote_data)
-    return render_template('index.html', quote=quote_data)
+    return render_template('index.html', quote='hello')
+    # return render_template('index.html', quote=quote_data)
+    # quote_data = get_todays_quote()

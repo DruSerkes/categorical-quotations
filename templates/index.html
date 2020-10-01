@@ -6,9 +6,25 @@
 <!-- TODO add index.html -->
 <h1>Categorical Quotations</h1>
 
+
+<h3>Quote of the day</h3>
 <section class="content">
-    <blockquote>{{ quote.contents.quotes[0].quote }}</blockquote>
-    <cite>{{ quote.contents.quotes[0].author }}</cite>
+    <blockquote>
+        <b>"</b>
+        Nothing is trivial
+        <b>"</b>
+    </blockquote>
+    <cite>
+        <b>-</b>
+        Brandon Lee
+    </cite>
 </section>
+
+{#<blockquote>
+    <b>"</b>
+    {{ quote.contents.quotes[0].quote }}
+    <b>"</b>
+</blockquote>
+<cite> {{ quote.contents.quotes[0].author }}</cite>#}
 
 {% endblock %}
