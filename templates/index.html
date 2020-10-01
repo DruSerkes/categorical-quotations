@@ -3,11 +3,24 @@
 
 {% block content %}
 
-<!-- TODO add index.html -->
 <h1>Categorical Quotations</h1>
 
 
 <h3>Quote of the day</h3>
+
+{% if quote.contents %}
+
+<blockquote>
+    <b>"</b>
+    {{ quote.contents.quotes[0].quote }}
+    <b>"</b>
+</blockquote>
+<cite> 
+    <b>-</b>
+    {{ quote.contents.quotes[0].author }}
+</cite>
+
+{% else %}
 <section class="content">
     <blockquote>
         <b>"</b>
@@ -19,12 +32,7 @@
         Brandon Lee
     </cite>
 </section>
+{% endif %}
 
-{#<blockquote>
-    <b>"</b>
-    {{ quote.contents.quotes[0].quote }}
-    <b>"</b>
-</blockquote>
-<cite> {{ quote.contents.quotes[0].author }}</cite>#}
 
 {% endblock %}
