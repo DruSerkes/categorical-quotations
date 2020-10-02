@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, flash, request, url_for
 import os
 import requests
 from secrets import KEYNAME
@@ -17,3 +17,16 @@ def homepage():
     return render_template('index.html', quote='hello')
     # return render_template('index.html', quote=quote_data)
     # quote_data = get_todays_quote()
+
+
+@app.route('/categories', methods=['GET'])
+def get_quote_by_category():
+    """
+    Gets quote by category and renders to user
+    """
+    category = request.form.get('category', False)
+    if not category:
+        return redirect(url_for(homepage))
+    else:
+        quote = get_todays_quote(category)
+        return render_template('category.html', quote=quote)
