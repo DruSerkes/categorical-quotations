@@ -10,9 +10,9 @@ def get_todays_quote(category=""):
         if response.status_code != 200:
             return quote_data.error
         else:
-            quote = quote_data.contents.quotes[0]
+            quote = quote_data['contents']['quotes'][0]
             return quote
-    except Error as e:
+    except Exception as e:
         print(e)
-        quote = {message: "Something went wrong - please try again later"}
+        quote = {'message': "Something went wrong - please try again later"}
         return quote

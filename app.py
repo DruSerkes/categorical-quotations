@@ -24,9 +24,9 @@ def get_quote_by_category():
     """
     Gets quote by category and renders to user
     """
-    category = request.form.get('category', False)
+    category = request.args.get('category', False)
     if not category:
-        return redirect(url_for(homepage))
+        return redirect(url_for('homepage'))
     else:
         quote = get_todays_quote(category)
         return render_template('category.html', quote=quote)
