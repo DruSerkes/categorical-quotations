@@ -87,6 +87,12 @@ h3 {
 	-webkit-text-fill-color: white;
 }
 
+h4 {
+	margin: 10% auto;
+	font-size: 1.8rem;
+	text-align: center;
+}
+
 .content {
 	margin: 0 auto;
 	width: 75%;
