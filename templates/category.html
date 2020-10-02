@@ -15,15 +15,22 @@
 
 <h3>{{ quote.title }}</h3>
 
-<blockquote id="{{quote.id}}" background="{{quote.background}}" class="content">
-    <b>"</b>
-    {{ quote.quote }}
-    <b>"</b>
-</blockquote>
-<cite> 
-    <b>-</b>
-    {{ quote.author }}
-</cite>
+<section  class="quote">
+
+    <blockquote id="{{ quote.id }}" class="content">
+        <p>
+            <b>"</b>
+            {{ quote.quote }}
+            <b>"</b>
+        </p>
+        <cite> 
+            <b>-</b>
+            {{ quote.author }}
+        </cite>
+    </blockquote>
+
+</section>
+
 
 {% endif %}
 
