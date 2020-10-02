@@ -12,7 +12,6 @@ def get_todays_quote(category=""):
         else:
             quote = quote_data.contents.quotes[0]
             return quote
-# res.data.contents.quotes[0].quote/author/category/id/background/title
     except Error as e:
         print(e)
         quote = {message: "Something went wrong - please try again later"}

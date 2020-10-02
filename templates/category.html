@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+
+{% block content %}
+
+<!-- # quote = {quote/author/category/id/background/title} -->
+
+<h1>Categorical Quotations</h1>
+
+{% if quote.message %}
+
+<blockquote> {{ quote.message }} </blockquote>
+
+{% else  %}
+
+<h3>{quote.title}</h3>
+
+<blockquote id="{{quote.id}}" background="{{quote.background}}">
+    <b>"</b>
+    {{ quote.quote }}
+    <b>"</b>
+</blockquote>
+<cite> 
+    <b>-</b>
+    {{ quote.author }}
+</cite>
+
+{% endif %}
+
+
+{% endblock %}
