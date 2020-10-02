@@ -19,7 +19,7 @@ def homepage():
     # quote_data = get_todays_quote()
 
 
-@app.route('/categories', methods=['GET'])
+@app.route('/quotes', methods=['GET'])
 def get_quote_by_category():
     """
     Gets quote by category and renders to user
