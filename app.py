@@ -29,4 +29,7 @@ def get_quote_by_category():
         return redirect(url_for('homepage'))
     else:
         quote = get_todays_quote(category)
-        return render_template('category.html', quote=quote)
+        if quote['message']:
+            return render_template('rate-limit.html', quote=quote)
+        else:
+            return render_template('category.html', quote=quote)
