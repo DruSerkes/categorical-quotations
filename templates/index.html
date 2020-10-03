@@ -8,29 +8,25 @@
 
 <h3>Quote of the day</h3>
 
-{% if quote.contents %}
+{% if quote.id %}
 
 <blockquote class="content">
-    <b>"</b>
-    {{ quote.contents.quotes[0].quote }}
-    <b>"</b>
+    <p>{{ quote.quote }}</p>
 </blockquote>
 <cite> 
-    <b>-</b>
-    {{ quote.contents.quotes[0].author }}
+    - {{ quote.author }}
 </cite>
 
 {% else %}
 
 <section class="content">
-    <blockquote>
-        <b>"</b>
-        Nothing is trivial
-        <b>"</b>
-    </blockquote>
+    <p>
+        <blockquote>
+            "Nothing is trivial"
+        </blockquote>
+    </p>
     <cite>
-        <b>-</b>
-        Brandon Lee
+        - Brandon Lee
     </cite>
 </section>
 
