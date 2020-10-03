@@ -14,9 +14,12 @@ def homepage():
     """
     Home page - Gets quote of the day and renders it on a template
     """
-    return render_template('index.html', quote='hello')
-    # return render_template('index.html', quote=quote_data)
-    # quote_data = get_todays_quote()
+    quote = get_todays_quote()
+    if quote.get('message', False):
+        flash(quote['message'], 'danger')
+        return render_template('rate-limit.html', quote=quote)
+    else:
+        return render_template('index.html', quote=quote)
 
 
 @app.route('/quotes', methods=['GET'])
@@ -29,7 +32,8 @@ def get_quote_by_category():
         return redirect(url_for('homepage'))
     else:
         quote = get_todays_quote(category)
-        if quote['message']:
+        if quote.get('message', False):
+            flash(quote['message'], 'danger')
             return render_template('rate-limit.html', quote=quote)
         else:
             return render_template('category.html', quote=quote)

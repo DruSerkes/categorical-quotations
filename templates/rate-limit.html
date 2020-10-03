@@ -1,20 +1,6 @@
-{% extends 'base.html' %} 
-
+{% extends 'base.html' %}
 
 {% block content %}
-
-<h3>Quote of the day</h3>
-
-{% if quote.id %}
-
-<blockquote class="content">
-    <p>{{ quote.quote }}</p>
-</blockquote>
-<cite> 
-    - {{ quote.author }}
-</cite>
-
-{% else %}
 
 <section class="content">
     <p>
@@ -26,8 +12,6 @@
         - Brandon Lee
     </cite>
 </section>
-
-{% endif %}
 
 
 {% endblock %}

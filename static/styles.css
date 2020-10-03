@@ -125,9 +125,6 @@ h4 {
 .quote {
 	width: 100%;
 	height: auto;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 }
 
 blockquote {
@@ -136,6 +133,36 @@ blockquote {
 
 cite {
 	margin-left: 53%;
+}
+
+#flash {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+.alert {
+	text-align: center;
+	position: relative;
+}
+
+.danger {
+	background-color: crimson;
+	color: white;
+	width: 50%;
+	height: auto;
+	margin: 10% auto;
+	padding: 1rem;
+	border-radius: 3px;
+}
+
+.close {
+	background: none;
+	position: absolute;
+	top: 0;
+	left: 3px;
+	padding: 0;
 }
 
 @media only screen and (max-width: 400px) {
