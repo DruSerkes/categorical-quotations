@@ -14,6 +14,19 @@
     </blockquote>
 </section>
 
+<div class="btn-container">    
+    <button 
+    data-id="{{ quote.id }}"
+    data-quote="{{ quote.quote }}"
+    data-author="{{ quote.author }}" 
+    data-title="{{ quote.title }}"
+    data-category="{{ quote.category }}"
+    data-background="{{ quote.background }}"
+    class="favorite">
+    Add to favorites
+    </button>
+</div>
+
 {% else %}
 
 <section class="content">
