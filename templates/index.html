@@ -7,12 +7,12 @@
 
 {% if quote.id %}
 
-<blockquote class="content">
-    <p>{{ quote.quote }}</p>
-</blockquote>
-<cite> 
-    - {{ quote.author }}
-</cite>
+<section class="quote">
+    <blockquote id="{{ quote.id }}" class="content">
+        <p>"{{ quote.quote }}"</p>
+        <cite>-{{ quote.author }}</cite>
+    </blockquote>
+</section>
 
 {% else %}
 
