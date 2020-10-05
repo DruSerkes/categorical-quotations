@@ -186,7 +186,8 @@ ol > li {
 }
 
 li > button {
-	/* TODO style the buttons */
+	background: none;
+	outline-style: none;
 }
 
 @media only screen and (max-width: 400px) {
