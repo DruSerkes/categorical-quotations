@@ -5,7 +5,6 @@ from secrets import KEYNAME
 from helpers import get_todays_quote
 
 app = Flask(__name__)
-app.run()
 app.config["SECRET_KEY"] = os.environ.get('SECRET_KEY', KEYNAME)
 
 
