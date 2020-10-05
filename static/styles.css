@@ -170,6 +170,25 @@ cite {
 	padding: 0;
 }
 
+.favorites-container > ol {
+	list-style-type: none;
+	background-color: floralwhite;
+	opacity: 0.8;
+	width: 80%;
+	margin: 0 auto;
+	padding: 1rem;
+	border-radius: 5px;
+}
+
+ol > li {
+	display: flex;
+	justify-content: space-between;
+}
+
+li > button {
+	/* TODO style the buttons */
+}
+
 @media only screen and (max-width: 400px) {
 	label {
 		display: block;
