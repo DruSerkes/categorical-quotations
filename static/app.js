@@ -1,6 +1,7 @@
 const closeBtn = document.querySelector('.close');
 const flash = document.getElementById('flash');
 const favBtn = document.querySelector('.favorite');
+const favList = document.querySelector('.favorites-container');
 const id = favBtn.dataset.id;
 const quote = favBtn.dataset.quote;
 const author = favBtn.dataset.author;
@@ -32,6 +33,8 @@ closeBtn.addEventListener('click', () => {
 	flash.remove();
 });
 
+if (favList) renderFavoriteList();
+
 /**
  * Helpers
  */
@@ -56,4 +59,29 @@ const removeFavorite = () => {
 	localStorage.setItem('favorites', JSON.stringify(favorites));
 	favBtn.setAttribute('id', 'add');
 	favBtn.innerText = 'Add to favorites';
+};
+
+/**
+ * Render a list of favorites
+ */
+const renderFavoriteList = () => {
+	Object.values(favorites).forEach((fav) => {
+		const favHTML = generateFavoriteItemHTML(fav);
+		favList.append(favHTML);
+	});
+};
+
+/** Generate HTML for a list item 
+ * 
+ * @param {*} fav object - contains id, quote, author, title, background, category 
+ */
+const generateFavoriteItemHTML = (fav) => {
+	return `
+	<li class="favorite-item" id="${fav.id}">
+	<p>${fav.quote} 
+	<small>${fav.author}</small>
+	</p>
+	<button class="remove-fav">X</button>
+	</li>
+	`;
 };
