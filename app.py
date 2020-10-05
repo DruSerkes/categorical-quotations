@@ -37,3 +37,11 @@ def get_quote_by_category():
             return render_template('rate-limit.html', quote=quote)
         else:
             return render_template('category.html', quote=quote)
+
+
+@app.route('/favorites', methods=['GET'])
+def show_favorite_list():
+    """
+    Show a list of user favorites
+    """
+    return render_template('favorites.html')

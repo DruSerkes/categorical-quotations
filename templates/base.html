@@ -6,8 +6,12 @@
     <title>{% block title %}Categorical Quotations{% endblock %}</title>
     <link rel="stylesheet" href="../static/styles.css">
 </head>
-<body style="background-image: url({{ quote.background }});">
 
+{% if quote %}
+<body style="background-image: url({{ quote.background }});">
+{% else %}
+<body>
+{% endif %}
 <!-- Navbar  -->
 
 <nav class="navbar">

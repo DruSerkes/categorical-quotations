@@ -1,39 +1,47 @@
-const closeBtn = document.querySelector('.close');
-const flash = document.getElementById('flash');
-const favBtn = document.querySelector('.favorite');
-const favList = document.querySelector('.favorites-container');
-const id = favBtn.dataset.id;
-const quote = favBtn.dataset.quote;
-const author = favBtn.dataset.author;
-const title = favBtn.dataset.title;
-const category = favBtn.dataset.category;
-const background = favBtn.dataset.background;
+'use strict';
+const closeBtn = document.querySelector('.close') || null;
+const flash = document.getElementById('flash') || null;
+const favBtn = document.querySelector('.favorite-btn') || null;
+const favList = document.querySelector('.favorites-container') || null;
+let id, quote, author, title, category, background;
+if (favBtn) {
+	id = favBtn.dataset.id || null;
+	quote = favBtn.dataset.quote || null;
+	author = favBtn.dataset.author || null;
+	title = favBtn.dataset.title || null;
+	category = favBtn.dataset.category || null;
+	background = favBtn.dataset.background || null;
+}
 // favorites from localStorage
 let favorites = JSON.parse(localStorage.getItem('favorites')) || {};
 
 // set favoites button text and id
-if (favorites[id]) {
+if (favBtn && favorites[id]) {
 	favBtn.innerText = 'Remove from favorites';
 	favBtn.setAttribute('id', 'remove');
-} else {
+} else if (favBtn) {
 	favBtn.setAttribute('id', 'add');
 }
 
 // favorite button
-favBtn.addEventListener('click', () => {
-	if (favBtn.getAttribute('id') === 'add') {
-		addFavorite();
-	} else {
-		removeFavorite();
-	}
-});
+if (favBtn) {
+	favBtn.addEventListener('click', () => {
+		if (favBtn.getAttribute('id') === 'add') {
+			addFavorite();
+		} else {
+			removeFavorite();
+		}
+	});
+}
 
 // remove flashed message
-closeBtn.addEventListener('click', () => {
-	flash.remove();
-});
+if (flash) {
+	closeBtn.addEventListener('click', () => {
+		flash.remove();
+	});
+}
 
-if (favList) renderFavoriteList();
+if (favList && !favList.children.length) renderFavoriteList();
 
 /**
  * Helpers
@@ -42,40 +50,43 @@ if (favList) renderFavoriteList();
 /**
  * Add a favorite
  */
-const addFavorite = () => {
+function addFavorite() {
 	let newFavQuote = { id, quote, author, title, category, background };
 	favorites = { ...favorites, [id]: newFavQuote };
 	localStorage.setItem('favorites', JSON.stringify(favorites));
 	console.log('favorites ==', favorites);
 	favBtn.setAttribute('id', 'remove');
 	favBtn.innerText = 'Remove from favorites';
-};
+}
 
 /**
  * Remove a favorite
  */
-const removeFavorite = () => {
+function removeFavorite() {
 	delete favorites[id];
 	localStorage.setItem('favorites', JSON.stringify(favorites));
 	favBtn.setAttribute('id', 'add');
 	favBtn.innerText = 'Add to favorites';
-};
+}
 
 /**
  * Render a list of favorites
  */
-const renderFavoriteList = () => {
+function renderFavoriteList() {
+	const myList = document.createElement('ol');
 	Object.values(favorites).forEach((fav) => {
 		const favHTML = generateFavoriteItemHTML(fav);
-		favList.append(favHTML);
+		console.log('rendering favorite');
+		myList.innerHTML += favHTML;
 	});
-};
+	favList.append(myList);
+}
 
 /** Generate HTML for a list item 
  * 
  * @param {*} fav object - contains id, quote, author, title, background, category 
  */
-const generateFavoriteItemHTML = (fav) => {
+function generateFavoriteItemHTML(fav) {
 	return `
 	<li class="favorite-item" id="${fav.id}">
 	<p>${fav.quote} 
@@ -84,4 +95,4 @@ const generateFavoriteItemHTML = (fav) => {
 	<button class="remove-fav">X</button>
 	</li>
 	`;
-};
+}
