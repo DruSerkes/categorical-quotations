@@ -67,7 +67,6 @@ function addFavorite() {
 	let newFavQuote = { id, quote, author, title, category, background };
 	favorites = { ...favorites, [id]: newFavQuote };
 	localStorage.setItem('favorites', JSON.stringify(favorites));
-	console.log('favorites ==', favorites);
 	favBtn.setAttribute('id', 'remove');
 	favBtn.innerText = 'Remove from favorites';
 }
@@ -107,7 +106,6 @@ function renderFavoriteList() {
 	const myList = document.createElement('ol');
 	Object.values(favorites).forEach((fav) => {
 		const favHTML = generateFavoriteItemHTML(fav);
-		console.log('rendering favorite');
 		myList.innerHTML += favHTML;
 	});
 	favList.append(myList);
