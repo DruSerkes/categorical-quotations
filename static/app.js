@@ -10,6 +10,7 @@ const background = favBtn.dataset.background;
 // favorites from localStorage
 let favorites = JSON.parse(localStorage.getItem('favorites')) || {};
 
+// set favoites button text and id
 if (favorites[id]) {
 	favBtn.innerText = 'Remove from favorites';
 	favBtn.setAttribute('id', 'remove');
@@ -17,6 +18,7 @@ if (favorites[id]) {
 	favBtn.setAttribute('id', 'add');
 }
 
+// favorite button
 favBtn.addEventListener('click', () => {
 	if (favBtn.getAttribute('id') === 'add') {
 		addFavorite();
@@ -25,6 +27,18 @@ favBtn.addEventListener('click', () => {
 	}
 });
 
+// remove flashed message
+closeBtn.addEventListener('click', () => {
+	flash.remove();
+});
+
+/**
+ * Helpers
+ */
+
+/**
+ * Add a favorite
+ */
 const addFavorite = () => {
 	let newFavQuote = { id, quote, author, title, category, background };
 	favorites = { ...favorites, [id]: newFavQuote };
@@ -34,14 +48,12 @@ const addFavorite = () => {
 	favBtn.innerText = 'Remove from favorites';
 };
 
+/**
+ * Remove a favorite
+ */
 const removeFavorite = () => {
 	delete favorites[id];
 	localStorage.setItem('favorites', JSON.stringify(favorites));
 	favBtn.setAttribute('id', 'add');
 	favBtn.innerText = 'Add to favorites';
 };
-
-// remove flashed message
-closeBtn.addEventListener('click', () => {
-	flash.remove();
-});
