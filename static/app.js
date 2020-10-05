@@ -89,8 +89,8 @@ function renderFavoriteList() {
 function generateFavoriteItemHTML(fav) {
 	return `
 	<li class="favorite-item" id="${fav.id}">
-	<p>${fav.quote} 
-	<small>${fav.author}</small>
+	<p>"${fav.quote}"
+	<small>-<em>${fav.author}</em></small>
 	</p>
 	<button class="remove-fav">X</button>
 	</li>
